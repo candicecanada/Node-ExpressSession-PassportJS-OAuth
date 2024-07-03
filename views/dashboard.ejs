@@ -1,0 +1,14 @@
+<h1 class="mt-4">Dashboard</h1>
+<p class="lead mb-3">Welcome <%= user.name %></p>
+
+<div>
+    <% for (const [sessionID, sessionInfo] of Object.entries(sessions)) {%>
+        <div>
+            <p>Session ID: <%= sessionID %> </p>
+            <p>Session Info: <%= JSON.stringify(sessionInfo) %></p>
+            <a href="/revokeSession/<%= sessionID %>" >Revoke This Session</a>
+        </div>
+    <% } %>
+</div>
+
+<a href="/auth/logout" class="btn btn-secondary">Logout</a>
